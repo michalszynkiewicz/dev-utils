@@ -58,9 +58,8 @@ function appDirectory() {
 
 # function which should return a non-empty result if app is starting or running
 # e.g. if you use jetty and want to utilize appDirectory function you can implement it as follows
-function isStarting() {    # mstodo verify
+function isStarting() {
     local app=$1
     local appDir=$(appDirectory $app)
-    result=
     grepProcessForNameAndDirectory jetty "$appDir"
 }
