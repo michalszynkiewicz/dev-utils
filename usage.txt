@@ -1,3 +1,4 @@
 fill app_definition.sh with your data
 
 run apps with: runApp <application_name>
+
