@@ -14,6 +14,7 @@ function waitForStart() {
         if [[ "x" = "x$result" ]]
         then
             echo "app $app is no longer starting! Quitting"
+	    notifyError
             exit 1
         fi
 
@@ -76,10 +77,14 @@ function startIfNotRunning() {
     waitForStart $app
 }
 
+function notifyError() {
+	mplayer "/home/michal/skrypty/error.mp3"
+}
+
 function notifyFinished() {
 # write some stuff which you want invoked on finish
 # e.g. play some music:
-#    mplayer "/home/michal/started.mp3"
+    mplayer "/home/michal/skrypty/break.mp3"
 }
 # start app and all its dependencies
 function runApp() {
